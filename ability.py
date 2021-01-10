@@ -7,3 +7,5 @@ def ability(name):
     for i in data["abilities"]:
         ar.append(i["ability"]["name"])
     return ar
+
+
