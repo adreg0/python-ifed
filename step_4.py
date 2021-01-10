@@ -3,10 +3,7 @@ import pandas as pd
 import numpy as np
 
 def default():
-    '''
-    Uses normal linear search.
-    
-    '''
+    '''Returns the length of verified elements by linear search and time taken for execution '''
     start = time.time()
     verified_elements = []
 
@@ -18,12 +15,7 @@ def default():
     print('Duration using linear search: {} seconds'.format(time.time() - start))
 
 def usingnp():
-    '''
-    used numpy vectorisation---> It consumed much lesser time than the regular linear search. 
-    By using np.in1d, boolean values will be obtained which represents whether an element in one array is present in another array.
-    Verified_elements array is obtained in lesser time by using this boolean array over the subset_elements array 
-    
-    '''
+    '''Uses numpy vectorisation and returns the length of verified_elements and the time taken for execution.'''
     start = time.time()
     verified_elements=[]
     a=np.array(subset_elements)
@@ -32,11 +24,7 @@ def usingnp():
     print('Duration using numpy: {} seconds'.format(time.time() - start))
 
 def usingset():
-    '''
-    Set is a python datastructure which avoids duplicate occurences of values unlike list or tuple.
-    Sets are implemeted with the aid of hash tables which stores objects based on hash value and this makes search faster.
-
-    '''
+    ''' Uses python set for returning the length of elements and the time taken for execution.'''
     start = time.time()
     b=set(all_elements)
     verified_elements=[]
@@ -51,6 +39,7 @@ with open('subset_elemets.txt') as f:
     
 with open('all_elements.txt') as f:
     all_elements = f.read().split('\n')
+
 
 print("-----------Traditional linear search-------------")
 default()
